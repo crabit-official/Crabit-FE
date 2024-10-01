@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="text-2xl">CICD Check Vercel</div>;
+  return <div className="text-2xl">CICD Check Vercel Deploy</div>;
 }

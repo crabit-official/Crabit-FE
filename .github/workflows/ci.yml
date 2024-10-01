@@ -8,17 +8,15 @@ name: Continuous Integration
 #     branches: [ main ]
 
 # this is trigger CI on all kinds of branches and PRs
+#on:
+#  push:
+#  pull_request:
+
 on:
   push:
+    branches: [ main ]
   pull_request:
-
-permissions:
-  contents: read
-  pages: write
-  deployments: write
-  id-token: write
-  issues: write
-  pull-requests: write
+    branches: [ main ]
 
 jobs:
   build:
@@ -27,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # Fetch all history for all branches and tags
+          fetch-depth: 0
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
