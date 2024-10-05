@@ -10,7 +10,6 @@ const Container = ({ children }: IContainerProps) => {
   return (
     <div
       className="
-      max-w-[2520px]
       mx-auto
       xl:px-20
       md:px-10

@@ -1,5 +1,5 @@
-const Page = () => {
+const MyAcademyPage = () => {
   return <div>/main/academy/my Page</div>;
 };
 
-export default Page;
+export default MyAcademyPage;
