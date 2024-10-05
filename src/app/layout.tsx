@@ -1,9 +1,14 @@
+import './globals.css';
+
 import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import { Roboto } from 'next/font/google';
 
-import './globals.css';
-import { ReactNode } from 'react';
+import Navbar from '@/app/components/navbar';
+import LoginModal from '@/app/components/modals/login-modal';
+import RegisterModal from '@/app/components/modals/register-modal';
+import ClientOnly from '@/app/components/provider/client-only';
 
 const pretendard = localFont({
   src: '../../src/app/fonts/PretendardVariable.woff2',
@@ -33,7 +38,14 @@ export default function RootLayout({
       lang="ko"
       className={`${pretendard.variable}} ${roboto.variable} antialiased`}
     >
-      <body className="font-pretendard">{children}</body>
+      <body className="font-pretendard">
+        <ClientOnly>
+          <Navbar />
+          <main className="pb-20 pt-28">{children}</main>
+          <LoginModal />
+          <RegisterModal />
+        </ClientOnly>
+      </body>
     </html>
   );
 }
