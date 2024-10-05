@@ -1,5 +1,11 @@
+import AcademyList from '@/app/main/academy/my/components/academy-list';
+
 const MyAcademyPage = () => {
-  return <div>/main/academy/my Page</div>;
+  return (
+    <section>
+      <AcademyList />
+    </section>
+  );
 };
 
 export default MyAcademyPage;
